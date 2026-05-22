@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>World Cup Image Slider</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background: linear-gradient(135deg, #009c3b, #002776);
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+    }
+
+    .container{
+      width:90%;
+      max-width:1000px;
+    }
+
+    .title{
+      text-align:center;
+      color:#fff;
+      margin-bottom:25px;
+      font-size:3rem;
+      text-shadow:2px 2px 10px rgba(0,0,0,.4);
+    }
+
+    .slider{
+      position:relative;
+      width:100%;
+      height:550px;
+      overflow:hidden;
+      border-radius:20px;
+      box-shadow:0 15px 40px rgba(0,0,0,.4);
+    }
+
+    .slides{
+      display:flex;
+      width:500%;
+      height:100%;
+      animation: slide 20s infinite;
+    }
+
+    .slide{
+      width:100%;
+      position:relative;
+    }
+
+    .slide img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .content{
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      padding:40px;
+      background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.8)
+      );
+      color:#fff;
+    }
+
+    .content h2{
+      font-size:2.5rem;
+      margin-bottom:10px;
+    }
+
+    .content p{
+      font-size:1.1rem;
+      max-width:600px;
+    }
+
+    @keyframes slide{
+      0% {transform:translateX(0);}
+      20% {transform:translateX(0);}
+
+      25% {transform:translateX(-20%);}
+      45% {transform:translateX(-20%);}
+
+      50% {transform:translateX(-40%);}
+      70% {transform:translateX(-40%);}
+
+      75% {transform:translateX(-60%);}
+      95% {transform:translateX(-60%);}
+
+      100% {transform:translateX(0);}
+    }
+
+    .indicators{
+      position:absolute;
+      bottom:15px;
+      width:100%;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      z-index:10;
+    }
+
+    .dot{
+      width:14px;
+      height:14px;
+      border-radius:50%;
+      background:#fff;
+      opacity:.5;
+    }
+
+    .dot.active{
+      opacity:1;
+      background:#ffdf00;
+    }
+
+    @media(max-width:768px){
+
+      .slider{
+        height:400px;
+      }
+
+      .title{
+        font-size:2rem;
+      }
+
+      .content h2{
+        font-size:1.6rem;
+      }
+
+      .content p{
+        font-size:.95rem;
+      }
+
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1 class="title">⚽ World Cup Slider</h1>
+
+    <div class="slider">
+
+      <div class="slides">
+
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1400&auto=format&fit=crop" alt="">
+          <div class="content">
+            <h2>World Cup Fever</h2>
+            <p>The greatest football tournament bringing nations together.</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=1400&auto=format&fit=crop" alt="">
+          <div class="content">
+            <h2>Legendary Stadiums</h2>
+            <p>Historic arenas filled with passion, chants and unforgettable moments.</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1508098682722-e99c643e7485?q=80&w=1400&auto=format&fit=crop" alt="">
+          <div class="content">
+            <h2>Football Legends</h2>
+            <p>Where heroes are born and dreams become reality.</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1543357480-c60d40007a3f?q=80&w=1400&auto=format&fit=crop" alt="">
+          <div class="content">
+            <h2>Fans Around The World</h2>
+            <p>The energy of millions cheering for their countries.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="indicators">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
